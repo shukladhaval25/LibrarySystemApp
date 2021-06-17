@@ -25,13 +25,14 @@ namespace LibraryManagement
         }
 
         public IConfiguration Configuration { get; }
-
+        
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //TODO: Connection string should be set from configuration instead of hard code
+            string myDb1ConnectionString = Configuration.GetConnectionString("MyConn");
+          
             services.AddDbContext<LibraryWebContext>(options => {
-                options.UseSqlServer("server=DESKTOP-FT786DU\\SQLEXPRESS01;database=library;trusted_connection=true;");
+                options.UseSqlServer(myDb1ConnectionString);
             });
 
             services.AddCors(Options => {

@@ -118,5 +118,111 @@ namespace LibraryManagmentTest
                 Assert.IsTrue(actualResult.Title.Equals("New Journy of Life"));
             }
         }
+
+        [Test]
+        public async Task DeleteBook_shouldReturnCountAfterDeleteBook()
+        {
+            //Arrange: In memory database
+            var options = new DbContextOptionsBuilder<LibraryWebContext>()
+                .UseInMemoryDatabase(databaseName: "LibraryDataBase")
+                .Options;
+            int booksRecordCount = 2;
+
+            //Mock data for Books and Auther entity
+            using (var context = new LibraryWebContext(options))
+            {
+
+                context.Authors.Add(new Author
+                {
+                    AuthorId = 1,
+                    FirstName = "Kelly",
+                    LastName = "Zom"
+
+                });
+                context.SaveChanges();
+
+
+                context.Books.Add(new Book
+                {
+                    BookId = 1,
+                    Title = "New Journy of Life",
+                    AuthorId = 1,
+                    Author = new Author()
+                });
+
+                context.Books.Add(new Book
+                {
+                    BookId = 2,
+                    Title = "Future of IT",
+                    AuthorId = 1,
+                    Author = new Author()
+                });
+                context.SaveChanges();
+
+
+
+                BooksController controller = new BooksController(context);
+                var result = await controller.GetBooks() as ActionResult<IEnumerable<Book>>;
+                var actualResult = result.Value;
+
+                Assert.IsTrue(((System.Collections.Generic.List<LibraryManagement.Model.Book>)actualResult).Count == booksRecordCount);
+
+                var  resultDelete = (ActionResult<Book>)await controller.DeleteBook(1);
+                var actualResultDeleted = resultDelete.Value;
+
+                Assert.IsTrue(actualResultDeleted != null);
+                Assert.IsTrue(actualResultDeleted.BookId == 1);
+                Assert.IsTrue(actualResultDeleted.Title.Equals("New Journy of Life"));
+            }
+        }
+
+        [Test]
+        public async Task DeleteBookWithInvalidId_shouldReturnNotFound()
+        {
+            //Arrange: In memory database
+            var options = new DbContextOptionsBuilder<LibraryWebContext>()
+                .UseInMemoryDatabase(databaseName: "LibraryDataBase")
+                .Options;
+            int booksRecordCount = 2;
+
+            //Mock data for Books and Auther entity
+            using (var context = new LibraryWebContext(options))
+            {
+
+                context.Authors.Add(new Author
+                {
+                    AuthorId = 1,
+                    FirstName = "Kelly",
+                    LastName = "Zom"
+
+                });
+                context.SaveChanges();
+
+
+                context.Books.Add(new Book
+                {
+                    BookId = 1,
+                    Title = "New Journy of Life",
+                    AuthorId = 1,
+                    Author = new Author()
+                });
+
+                context.SaveChanges();
+
+                BooksController controller = new BooksController(context);
+                var result = await controller.GetBooks() as ActionResult<IEnumerable<Book>>;
+                var actualResult = result.Value;
+
+                Assert.IsTrue(((System.Collections.Generic.List<LibraryManagement.Model.Book>)actualResult).Count == booksRecordCount);
+
+                var resultDelete = (ActionResult<Book>)await controller.DeleteBook(5);
+                var actualResultDeleted = resultDelete.Value;
+
+                Assert.IsNull(actualResultDeleted);
+                //Assert.IsTrue(actualResultDeleted != null);
+                //Assert.IsTrue(actualResultDeleted.BookId == 1);
+                //Assert.IsTrue(actualResultDeleted.Title.Equals("New Journy of Life"));
+            }
+        }
     }
 }

@@ -81,8 +81,6 @@ C:\Users\shukl\OneDrive\Desktop\ApplicationDev\LibraryManagement\obj\Debug\netco
 C:\Users\shukl\OneDrive\Desktop\ApplicationDev\LibraryManagement\obj\Debug\netcoreapp3.1\LibraryManagement.csproj.CoreCompileInputs.cache
 C:\Users\shukl\OneDrive\Desktop\ApplicationDev\LibraryManagement\obj\Debug\netcoreapp3.1\LibraryManagement.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\shukl\OneDrive\Desktop\ApplicationDev\LibraryManagement\obj\Debug\netcoreapp3.1\staticwebassets\LibraryManagement.StaticWebAssets.Manifest.cache
-C:\Users\shukl\OneDrive\Desktop\ApplicationDev\LibraryManagement\obj\Debug\netcoreapp3.1\staticwebassets\LibraryManagement.StaticWebAssets.xml
-C:\Users\shukl\OneDrive\Desktop\ApplicationDev\LibraryManagement\obj\Debug\netcoreapp3.1\scopedcss\bundle\LibraryManagement.styles.css
 C:\Users\shukl\OneDrive\Desktop\ApplicationDev\LibraryManagement\obj\Debug\netcoreapp3.1\LibraryManagement.RazorTargetAssemblyInfo.cache
 C:\Users\shukl\OneDrive\Desktop\ApplicationDev\LibraryManagement\obj\Debug\netcoreapp3.1\LibraryManagement.csproj.CopyComplete
 C:\Users\shukl\OneDrive\Desktop\ApplicationDev\LibraryManagement\obj\Debug\netcoreapp3.1\LibraryManagement.dll
@@ -166,3 +164,5 @@ C:\Users\shukl\OneDrive\Desktop\ApplicationDev\LibraryManagement\bin\Debug\netco
 C:\Users\shukl\OneDrive\Desktop\ApplicationDev\LibraryManagement\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\shukl\OneDrive\Desktop\ApplicationDev\LibraryManagement\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\shukl\OneDrive\Desktop\ApplicationDev\LibraryManagement\obj\Debug\netcoreapp3.1\LibraryManagement.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\shukl\OneDrive\Desktop\ApplicationDev\LibraryManagement\bin\Debug\netcoreapp3.1\LibraryManagement.StaticWebAssets.xml
+C:\Users\shukl\OneDrive\Desktop\ApplicationDev\LibraryManagement\obj\Debug\netcoreapp3.1\LibraryManagement.GeneratedMSBuildEditorConfig.editorconfig

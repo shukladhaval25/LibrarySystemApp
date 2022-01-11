@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using LibraryManagement.Model;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LibraryManagement.Controllers
 {
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class BooksController : ControllerBase

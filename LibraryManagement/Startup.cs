@@ -68,7 +68,7 @@ namespace LibraryManagement
                     Contact = new OpenApiContact
                     {
                         Name = "Dhaval Shukla",
-                        Email = string.Empty,
+                        Email = "shukla_dhaval@yahoo.com",
                         Url = new Uri("http://myurl.com"),
                     },
                 });
